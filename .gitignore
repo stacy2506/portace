@@ -1,0 +1,9 @@
+# Python temporary compiled files
+__pycache__/
+*.pyc
+
+# Local SQLite database (we don't commit raw database files)
+*.db
+
+# Environment variables & API keys
+.env
