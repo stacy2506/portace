@@ -1,18 +1,30 @@
+# PortAce 
 
-# PortAce 🚀
+**PortAce** is an AI-powered CS project generator and 7-day execution roadmap engine built with FastAPI, SQLAlchemy, and Google Gemini 2.5 Flash.
 
-**PortAce** is a portfolio-grade Computer Science project generator and roadmap engine designed to help developers move from project ideas to execution seamlessly. 
-
-Instead of generic project lists, PortAce provides structured project specifications filtered by technical criteria, along with AI-generated step-by-step implementation roadmaps.
-
-## Key Features
-- **Dynamic Filter Engine:** Query project ideas by **difficulty** (*Beginner, Intermediate, Advanced*), **domain** (*Web Dev, Systems, AI/ML*), and **tech stack tag**.
-- **Lightweight & Fast:** Built using FastAPI and SQLite with SQLAlchemy ORM for clean, rapid database operations.
-- **Interactive Documentation:** Built-in OpenAPI Swagger UI (`/docs`) for real-time endpoint testing.
-- **AI Roadmap Engine:** *(In Development)* Generates customized learning and build roadmaps using the Gemini API.
+## Features
+- **Project Discovery:** Filter CS project ideas by domain (`Web Dev`, `AI/ML`, `Systems`), difficulty, and tech stack.
+- **AI Roadmap Generator:** Generates structured 7-day technical roadmaps enforcing strict JSON output via Pydantic schemas.
+- **Customized Roadmaps:** Generates tailored roadmaps based on user constraints (hours per day, skill level, preferred libraries).
+- **SQLite Database Caching:** Persists generated roadmaps to minimize Gemini API latency and costs.
 
 ## Tech Stack
 - **Backend:** Python 3.12, FastAPI, Uvicorn
-- **Database & ORM:** SQLite, SQLAlchemy
-- **Data Validation:** Pydantic
-- **AI Integration:** Google Gemini API
+- **Database:** SQLite & SQLAlchemy ORM
+- **AI Integration:** Google Gemini API (`google-genai` SDK)
+- **Containerization:** Docker & Docker Compose
+
+## Quickstart
+
+### Local Setup
+```bash
+# Clone repository
+git clone [https://github.com/stacy2506/portace.git](https://github.com/stacy2506/portace.git)
+cd portace
+
+# Set up environment variables (.env)
+echo "GEMINI_API_KEY=your_gemini_api_key" > .env
+
+# Run backend server
+uvicorn main:app --reload
+
